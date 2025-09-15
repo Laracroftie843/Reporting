@@ -1,1 +1,22 @@
-#Placeholder
+name: Generate Report
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: unbuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas reportlab
+      - name: Run script
+        run: python report_and_email.py
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: weeky-report
+          path: weekly_report.pdf
