@@ -39,7 +39,7 @@ def read_and_scrub_csv(file_path: str, columns_to_keep: Optional[List[str]] = No
 # Converts df -> to reportlab Table
 def df_to_reportlab_table(df: pd.DataFrame, style, doc_width) -> Table:
   if df.shape[1] == 0:
-    data = [[Paragraph(",i>No columns selected / no data</i>", styles['BodyText'])]]
+    data = [[Paragraph("<i>No columns selected / no data</i>", styles['BodyText'])]]
     return Table(data, colWidths=[doc_width * 0.8])
   header = [Paragraph(str(h), styles['Heading5']) for h in df.columns.tolist()]
   rows = []
@@ -64,7 +64,7 @@ def df_to_reportlab_table(df: pd.DataFrame, style, doc_width) -> Table:
   return tbl
 
 #Creates PDF Report
-def create_pdf_reort(csv_files: List[str}, column_map: Dict[str, Optional[List[str]}}, output_file: str = "weekly_report.pdf") -> str:
+def create_pdf_reort(csv_files: List[str], column_map: Dict[str, Optional[List[str]}}, output_file: str = "weekly_report.pdf") -> str:
   doc = SimpleDocTemplate(output_file, pagesize=LETTER, leftMargin=36, rightMargin=36,topMargin=36, bottomMargin=36)
   styles = getSampleStyleSheet()
   story = []
