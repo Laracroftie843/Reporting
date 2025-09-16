@@ -115,7 +115,7 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
   msg.attach(MIMEText(body, "plain"))
 
   with open(attachement_path, "rb") as f:
-    part  MIMEBase("application", "octet-stream")
+    part = MIMEBase("application", "octet-stream")
     part.set_payload(f.read())
   encoders.encode_base64(part)
   part.add_header("Content-Disposition", f'attachment; filename="{os.path.basename(attachment_path)}"')
