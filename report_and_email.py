@@ -126,7 +126,7 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
   server.ehlo()
   if smtp_server != "localhost" and smtop_port == 587:
     server.starttls(context=context)
-    server.ehlo(
+    server.ehlo()
   server.login(sender_email, app_password)
   server.sendmail(sender_email, recipients, msg.as_string())
   server.qit()
