@@ -50,7 +50,7 @@ def df_to_reportlab_table(df: pd.DataFrame, style, doc_width) -> Table:
   col_count = max(1, df.shape[1])
   min_col_w = 50
   proposed = doc_width / col_count
-  col_widths = [proposed] * col_count if proposed >= min_col_w else [min_col_} * col_count
+  col_widths = [proposed] * col_count if proposed >= min_col_w else [min_col_] * col_count
   # Table
   tbl = Table(data, colWidths=col_widths, repeatRows=1)
   tbl.setStyle(TableStyle([
