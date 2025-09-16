@@ -73,7 +73,7 @@ def create_pdf_reort(csv_files: List[str], column_map: Dict[str, Optional[List[s
   available_with = page_width - doc.lefftMargin - doc.rightMargin
 
   generated_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-  story.append(Paragraph(f"Combined Weekly Report (generated [generated_time})", styles['Title']))
+  story.append(Paragraph(f"Combined Weekly Report (generated [generated_time])", styles['Title']))
   story.append (Spacer(1,12))
 
   for idx, file_path in enumerate(csv_files, start=1):
