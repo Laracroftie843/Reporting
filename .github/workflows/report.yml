@@ -19,7 +19,7 @@ jobs:
       - name: Run script
         run: python report_and_email.py
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
 
           name: weeky-report
