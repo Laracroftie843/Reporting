@@ -31,7 +31,7 @@ def read_and_scrub_csv(file_path: str, columns_to_keep: Optional[List[str]] = No
   if columns_to_keep is None:
     return df
   available = [c for c in columns_to_keep if c in df.columns]
-  missing = [c for c in columns_to_keep f c not in df.columns]
+  missing = [c for c in columns_to_keep if c not in df.columns]
   if missing:
     print(f"[WARN] Missing columns in {file_path}: {missing}")
   return df[available].copy()
