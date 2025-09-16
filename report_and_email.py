@@ -147,7 +147,7 @@ if __name__ == "__main__":
     app_pw = os.environ.get("GMAIL_APP_PASSWORD")
     recipient_list = [os.environ.get("REPORT_RECIPIENT", sender)] if sender else []
 
-    if sender nd app_pw and recipient_list:
+    if sender and app_pw and recipient_list:
       try:
         send_email_with_attachment(sender, app_pw, recipient_list, "Weekly Combined Report", "Attached is the weekly combined report.", output_pdf, smtp_server=os.environ.get("SMTP_HOST", "smtp.gmail.com"), smtp_port=int(os.environ.get("SMTP_PORT", "587")))
       except Exception as e:
