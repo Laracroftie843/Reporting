@@ -13,7 +13,7 @@ from datetime import datetime
 from typing import List, Dict, Optional
 
 # ReportLab
-from reportlab.platypus import SimpleDocTemplate, Table, Tablestyle, Paragraph, Spacer, PageBreak
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
 from reportlab.lib.pagesizes import LETTER
 from reportlab.lib.styles import getSamleStyleSheet
 from reportlab.lib import colors
