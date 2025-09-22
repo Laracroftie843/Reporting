@@ -64,7 +64,7 @@ def df_to_reportlab_table(df: pd.DataFrame, style, doc_width) -> Table:
   return tbl
 
 #Creates PDF Report
-def create_pdf_reort(csv_files: List[str], column_map: Dict[str, Optional[List[str]]], output_file: str = "weekly_report.pdf") -> str:
+def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[str]]], output_file: str = "weekly_report.pdf") -> str:
   doc = SimpleDocTemplate(output_file, pagesize=LETTER, leftMargin=36, rightMargin=36,topMargin=36, bottomMargin=36)
   styles = getSampleStyleSheet()
   story = []
