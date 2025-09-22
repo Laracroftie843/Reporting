@@ -70,7 +70,7 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
   story = []
 
   page_width = LETTER[0]
-  available_with = page_width - doc.lefftMargin - doc.rightMargin
+  available_with = page_width - doc.leftMargin - doc.rightMargin
 
   generated_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
   story.append(Paragraph(f"Combined Weekly Report (generated [generated_time])", styles['Title']))
