@@ -37,7 +37,7 @@ def read_and_scrub_csv(file_path: str, columns_to_keep: Optional[List[str]] = No
   return df[available].copy()
 
 # Converts df -> to reportlab Table
-def df_to_reportlab_table(df: pd.DataFrame, style, doc_width) -> Table:
+def df_to_reportlab_table(df: pd.DataFrame, styles, doc_width) -> Table:
   if df.shape[1] == 0:
     data = [[Paragraph("<i>No columns selected / no data</i>", styles['BodyText'])]]
     return Table(data, colWidths=[doc_width * 0.8])
