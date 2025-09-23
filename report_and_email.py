@@ -115,6 +115,7 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
   msg["Subject"] = subject
   msg.attach(MIMEText(body, "plain"))
 
+try:
   with open(attachment_path, "rb") as f:
     part = MIMEBase("application", "octet-stream")
     part.set_payload(f.read())
@@ -123,7 +124,7 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
   msg.attach(part)
   print(f"Attached file: {attachment_path}")
 except Exception as e:
-print(f"Failed to attach file: {e}")
+  print(f"Failed to attach file: {e}")
 
   context = ssl.create_default_context()
   server = smtplib.SMTP(smtp_server, smtp_port, timeeout=30)
