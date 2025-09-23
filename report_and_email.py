@@ -137,7 +137,7 @@ except Exception as e:
   server.sendmail(sender_email, recipients, msg.as_string())
   print(f"Email sent successfully to {REPORT_RECIPIENT}")
 except Exception as e:
-print(f"Error sending email: {e}")
+  print(f"Error sending email: {e}")
   server.quit()
   print("[INFO] Email sent (attempted).")
 
