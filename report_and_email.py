@@ -108,18 +108,22 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
 
 # Sends email with attachment
 def send_email_with_attachment(sender_email: str, app_password: str, recipients: List[str], subject: str, body: str, attachment_path: str, smtp_server: str = "smtp.gmail.com", smtp_port: int = 587):
+  print("Starting Email Send Process...")
   msg = MIMEMultipart()
   msg["From"] = sender_email
   msg["To"] = ", ".join(recipients)
   msg["Subject"] = subject
   msg.attach(MIMEText(body, "plain"))
 
-  with open(attachement_path, "rb") as f:
+  with open(attachment_path, "rb") as f:
     part = MIMEBase("application", "octet-stream")
     part.set_payload(f.read())
   encoders.encode_base64(part)
   part.add_header("Content-Disposition", f'attachment; filename="{os.path.basename(attachment_path)}"')
   msg.attach(part)
+  print(f"Attached file: {attachment_path}")
+except Exception as e:
+print(f"Failed to attach file: {e}")
 
   context = ssl.create_default_context()
   server = smtplib.SMTP(smtp_server, smtp_port, timeeout=30)
@@ -128,8 +132,12 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
     server.starttls(context=context)
     server.ehlo()
   server.login(sender_email, app_password)
+  print("Logged in successfully as:", GMAIL_USER)
   server.sendmail(sender_email, recipients, msg.as_string())
-  server.qit()
+  print(f"Email sent successfully to {REPORT_RECIPIENT}")
+except Exception as e:
+print(f"Error sending email: {e}")
+  server.quit()
   print("[INFO] Email sent (attempted).")
 
 #CLI - Example Run
