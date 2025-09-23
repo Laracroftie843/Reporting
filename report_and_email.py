@@ -107,7 +107,7 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
   return output_file
 
 # Sends email with attachment
-def send_email_with_attachment(sender_email: str, app_password: str, recipients: List[str], subject: str, body: str, attachment_path: str, smtp_server: str = "smtp.gmail.vom", smtp_port: int = 587):
+def send_email_with_attachment(sender_email: str, app_password: str, recipients: List[str], subject: str, body: str, attachment_path: str, smtp_server: str = "smtp.gmail.com", smtp_port: int = 587):
   msg = MIMEMultipart()
   msg["From"] = sender_email
   msg["To"] = ", ".join(recipients)
