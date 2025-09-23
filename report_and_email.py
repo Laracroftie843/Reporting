@@ -145,8 +145,8 @@ def send_email_with_attachment(sender_email: str, app_password: str, recipients:
         print(f"Email sent successfully to {recipients}")
     except Exception as e:
         print(f"Error sending email: {e}")
-  server.quit()
-  print("[INFO] Email sent (attempted).")
+        server.quit()
+        print("[INFO] Email sent (attempted).")
 
 #CLI - Example Run
 if __name__ == "__main__":
