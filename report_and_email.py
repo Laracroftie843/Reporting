@@ -36,17 +36,21 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
     df = pd.read_csv(file_path, dtype=str)
 
     if "sales" in filename:
+        if "lebustiere2" in filename:
+            #Report from file1.csv changes to Bethesda
+        else:
+            #Report from file1.csv changes to DC
         #Example: drop PII
         df = df.drop(columns=["CustomerName", "CustomerEmail"], errors="ignore")
 
-    elif "inventory" in filename:
+    elif "transaction" in filename:
+        if "lebustiere2" in filename:
+            #Report from file1.csv changes to Bethesda
+            else:
+                #Report from file1.csv changes to DC
         # Example: keep only useful fields
         keep = [c for c in ["SKU", "Stock", "Price'] if c in df.columns]
         df = df[keep]
-
-    elif "returns" in filename:
-        # Example: anonymize or drop sensitive fields
-        df = df.drop(columns=["Reason"], errors="ignore")
 
     else: 
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
