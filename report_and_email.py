@@ -41,7 +41,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
         else:
             #Report from file1.csv changes to DC
         #Example: drop PII
-        df = df.drop(columns=["CustomerName", "CustomerEmail"], errors="ignore")
+        df = df.drop(columns=["Department", "CustomerEmail"], errors="ignore")
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
