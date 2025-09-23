@@ -99,7 +99,7 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
       story.append(table)
       story.append(Spacer(1, 18))
 
-    if ix < len(csv_files):
+    if idx < len(csv_files):
       story.append(PageBreak())
 
   doc.build(story)
