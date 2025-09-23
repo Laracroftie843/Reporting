@@ -31,16 +31,27 @@ from email import encoders
 # -------------------------
 # Read CSV
 # -------------------------
-def read_and_scrub_csv(file_path: str, columns_to_keep: Optional[List[str]] = None) -> pd.DataFrame:
-    print(f"[DEBUG] Reading CSV: {file_path}")
-    df = pd.read_csv(file_path, dtype=str)  # reads as strings
-    if columns_to_keep is None:
-        return df
-    available = [c for c in columns_to_keep if c in df.columns]
-    missing = [c for c in columns_to_keep if c not in df.columns]
-    if missing:
-        print(f"[WARN] Missing columns in {file_path}: {missing}")
-    return df[available].copy()
+def scrub_csv(file_path: str) -> pd.DataFrame:
+    filename = os.path.basename(file_path).lower()
+    df = pd.read_csv(file_path, dtype=str)
+
+    if "sales" in filename:
+        #Example: drop PII
+        df = df.drop(columns=["CustomerName", "CustomerEmail"], errors="ignore")
+
+    elif "inventory" in filename:
+        # Example: keep only useful fields
+        keep = [c for c in ["SKU", "Stock", "Price'] if c in df.columns]
+        df = df[keep]
+
+    elif "returns" in filename:
+        # Example: anonymize or drop sensitive fields
+        df = df.drop(columns=["Reason"], errors="ignore")
+
+    else: 
+        print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
+
+    return df
 
 
 # -------------------------
