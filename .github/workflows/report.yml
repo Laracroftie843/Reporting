@@ -18,6 +18,10 @@ jobs:
         run: pip install pandas reportlab
       - name: Run script
         run: python report_and_email.py
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_RECIPIENT: ${{ secrets.REPORT_RECIPIENT }}
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
