@@ -25,7 +25,6 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-
 # -------------------------
 # Read & Scrub CSV
 # -------------------------
@@ -45,7 +44,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
-            df = df.head(10)  # ✅ apply row limit for Bethesda
+            df = df.head(10)
         else:
             # DC sales scrub rules
             df = df.drop(
@@ -57,23 +56,30 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
-            df = df.head(10)  # ✅ apply row limit for DC
+            df = df.head(10)
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
             # Bethesda transaction scrub rules
             keep = [c for c in ["Line Item"] if c in df.columns]
             df = df[keep]
+
+            if "Line Item" in df.columns:
+                # Extract size from Line Item using regex
+                df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
         else:
             # DC transaction scrub rules
             keep = [c for c in ["Line Item"] if c in df.columns]
             df = df[keep]
 
+            if "Line Item" in df.columns:
+                # Extract size from Line Item using regex
+                df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
+
     else: 
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
 
     return df
-
 # -------------------------
 # Converts df -> reportlab Table
 # -------------------------
