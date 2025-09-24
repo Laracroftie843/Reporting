@@ -65,16 +65,38 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
             df = df[keep]
 
             if "Line Item" in df.columns:
-                # Extract size from Line Item using regex
+                # Extract size
                 df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
+
+                # Count sizes
+                size_counts = (
+                    df["Size"]
+                    .value_counts()
+                    .reset_index()
+                    .rename(columns={"index": "Size", "Size": "Count"})
+                )
+
+                # Keep top 20 sizes
+                df = size_counts.head(20)
         else:
             # DC transaction scrub rules
             keep = [c for c in ["Line Item"] if c in df.columns]
             df = df[keep]
 
             if "Line Item" in df.columns:
-                # Extract size from Line Item using regex
+                # Extract size
                 df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
+
+                # Count sizes
+                size_counts = (
+                    df["Size"]
+                    .value_counts()
+                    .reset_index()
+                    .rename(columns={"index": "Size", "Size": "Count"})
+                )
+
+                # Keep top 20 sizes
+                df = size_counts.head(20)
 
     else: 
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
