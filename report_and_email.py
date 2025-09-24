@@ -38,10 +38,10 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
     if "sales" in filename:
         if "lebustiere2" in filename:
             #Report from file1.csv changes to Bethesda
-        else:
-            #Report from file1.csv changes to DC
-        #Example: drop PII
-        df = df.drop(columns=["Department", "Category", "Quantity Returned", "Returns Amount", "Discounts", "Margin", "Quantity on Hand", "Supplier", "Supplier Code", "Product UUID"], errors="ignore")
+            else:
+                #Report from file1.csv changes to DC
+                #Example: drop PII
+                df = df.drop(columns=["Department", "Category", "Quantity Returned", "Returns Amount", "Discounts", "Margin", "Quantity on Hand", "Supplier", "Supplier Code", "Product UUID"], errors="ignore")
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
