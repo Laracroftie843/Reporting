@@ -33,7 +33,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
     df = pd.read_csv(file_path, dtype=str)
 
     if "sales" in filename:
-        if "lebustiere2" in filename:
+        if "all_locations" in filename:
             # Bethesda sales scrub rules
             df = df.drop(
                 columns=[
