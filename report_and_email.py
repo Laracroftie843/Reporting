@@ -45,7 +45,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
-        df = df.head(10)
+            df = df.head(10)  # ✅ apply row limit for Bethesda
         else:
             # DC sales scrub rules
             df = df.drop(
@@ -57,7 +57,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
-        df = df.head(10)
+            df = df.head(10)  # ✅ apply row limit for DC
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
@@ -73,7 +73,6 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
 
     return df
-
 
 # -------------------------
 # Converts df -> reportlab Table
