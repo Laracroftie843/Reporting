@@ -1,9 +1,7 @@
 """
-Iteraton 1:
+Iteraton 2:
 - Read up to 4 CSVs from 'csvs/' folder
-- Keep all columns (editing later)
-- Create a single PDF with one labeled section per CSV file
-- Send the PDF via SMTP ?Have to figure out if we want this?
+- Scrubbing CSVs
 """
 
 # report_and_email.py
@@ -29,7 +27,7 @@ from email import encoders
 
 
 # -------------------------
-# Read CSV
+# Read & Scrub CSV
 # -------------------------
 def scrub_csv(file_path: str) -> pd.DataFrame:
     filename = os.path.basename(file_path).lower()
@@ -37,20 +35,30 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
 
     if "sales" in filename:
         if "lebustiere2" in filename:
-            #Report from file1.csv changes to Bethesda
-            else:
-                #Report from file1.csv changes to DC
-                #Example: drop PII
-                df = df.drop(columns=["Department", "Category", "Quantity Returned", "Returns Amount", "Discounts", "Margin", "Quantity on Hand", "Supplier", "Supplier Code", "Product UUID"], errors="ignore")
+            # Bethesda sales scrub rules
+            # TODO: Add Bethesda-specific column rules
+            pass
+        else:
+            # DC sales scrub rules
+            df = df.drop(
+                columns=[
+                    "Department", "Category", "Quantity Returned",
+                    "Returns Amount", "Discounts", "Margin",
+                    "Quantity on Hand", "Supplier", "Supplier Code",
+                    "Product UUID"
+                ],
+                errors="ignore"
+            )
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
-            #Report from file1.csv changes to Bethesda
-            else:
-                #Report from file1.csv changes to DC
-        # Example: keep only useful fields
-        keep = [c for c in ["Line Item"] if c in df.columns]
-        df = df[keep]
+            # Bethesda transaction scrub rules
+            # TODO: Add Bethesda-specific column rules
+            pass
+        else:
+            # DC transaction scrub rules
+            keep = [c for c in ["Line Item"] if c in df.columns]
+            df = df[keep]
 
     else: 
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
@@ -110,9 +118,8 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
         story.append(Paragraph(f"===== Report from {basename} =====", styles['Heading2']))
         story.append(Spacer(1, 6))
 
-        cols_to_keep = column_map.get(file_path, None)
         try:
-            df = read_and_scrub_csv(file_path, cols_to_keep)
+            df = scrub_csv(file_path)
         except Exception as e:
             print(f"[ERROR] Failed reading {basename}: {e}")
             story.append(Paragraph(f"<i>Error reading {basename}: {e}</i>", styles['BodyText']))
@@ -218,3 +225,4 @@ if __name__ == "__main__":
             print(f"[ERROR] Email failed: {e}")
     else:
         print("[INFO] Email skipped - set GMAIL_USER & GMAIL_APP_PASSWORD env vars to enable.")
+
