@@ -49,7 +49,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
             else:
                 #Report from file1.csv changes to DC
         # Example: keep only useful fields
-        keep = [c for c in ["SKU", "Stock", "Price'] if c in df.columns]
+        keep = [c for c in ["Line Item"] if c in df.columns]
         df = df[keep]
 
     else: 
