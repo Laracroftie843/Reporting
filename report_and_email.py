@@ -36,8 +36,15 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
     if "sales" in filename:
         if "lebustiere2" in filename:
             # Bethesda sales scrub rules
-            # TODO: Add Bethesda-specific column rules
-            pass
+            df = df.drop(
+                columns=[
+                    "Department", "Category", "Quantity Returned",
+                    "Returns Amount", "Discounts", "Margin",
+                    "Quantity on Hand", "Supplier", "Supplier Code",
+                    "Product UUID"
+                ],
+                errors="ignore"
+            )
         else:
             # DC sales scrub rules
             df = df.drop(
@@ -53,8 +60,8 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
     elif "transaction" in filename:
         if "lebustiere2" in filename:
             # Bethesda transaction scrub rules
-            # TODO: Add Bethesda-specific column rules
-            pass
+            keep = [c for c in ["Line Item"] if c in df.columns]
+            df = df[keep]
         else:
             # DC transaction scrub rules
             keep = [c for c in ["Line Item"] if c in df.columns]
