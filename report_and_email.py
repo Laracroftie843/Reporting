@@ -45,6 +45,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
+        df = df.head(10)
         else:
             # DC sales scrub rules
             df = df.drop(
@@ -56,6 +57,7 @@ def scrub_csv(file_path: str) -> pd.DataFrame:
                 ],
                 errors="ignore"
             )
+        df = df.head(10)
 
     elif "transaction" in filename:
         if "lebustiere2" in filename:
