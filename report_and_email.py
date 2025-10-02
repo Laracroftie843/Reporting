@@ -1,7 +1,8 @@
 """
-Iteraton 2:
+Iteration 3:
 - Read up to 4 CSVs from 'csvs/' folder
 - Scrubbing CSVs
+- Generates Bethesda-only report alongside DC-only
 """
 
 # report_and_email.py
@@ -26,6 +27,16 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 # -------------------------
+# Helper to find latest matching file
+# -------------------------
+def find_latest_file(pattern: str) -> Optional[str]:
+    files = glob.glob(pattern)
+    if not files:
+        return None
+    files.sort(key=os.path.getmtime, reverse=True)
+    return files[0]
+
+# -------------------------
 # Read & Scrub CSV
 # -------------------------
 def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.DataFrame:
@@ -36,7 +47,6 @@ def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.
     # SALES REPORTS
     # -------------------------
     if "sales-by-item" in filename:
-        # Drop common sales columns
         df = df.drop(
             columns=[
                 "Department", "Category", "Quantity Returned",
@@ -48,35 +58,27 @@ def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.
         )
 
         if "all_locations" in filename:
-            # All Locations → try to create Bethesda-only
             if dc_sales_df is not None:
                 try:
+                    # Keep only common columns
                     common_cols = list(set(df.columns).intersection(dc_sales_df.columns))
-                    bethesda_df = df[common_cols].copy()
+                    all_df = df[common_cols].copy()
                     dc_only = dc_sales_df[common_cols].copy()
 
-                    # Convert to numeric where possible
-                    for col in bethesda_df.columns:
-                        bethesda_df[col] = pd.to_numeric(bethesda_df[col], errors="ignore")
-                        if col in dc_only:
-                            dc_only[col] = pd.to_numeric(dc_only[col], errors="ignore")
+                    # Bethesda-only = all locations minus DC
+                    bethesda_only_df = pd.concat([all_df, dc_only]).drop_duplicates(keep=False)
 
-                    # Subtract DC values from All Locations to approximate Bethesda
-                    for col in bethesda_df.select_dtypes(include="number").columns:
-                        if col in dc_only:
-                            bethesda_df[col] = bethesda_df[col] - dc_only[col]
-
-                    df = bethesda_df.head(10)
+                    print(f"[INFO] Generated Bethesda-only report: rows={len(bethesda_only_df)}")
+                    return bethesda_only_df.head(10)
                 except Exception as e:
                     print(f"[ERROR] Failed to generate Bethesda-only report: {e}")
-                    df = df.head(10)
+                    return df.head(10)
             else:
-                # If no DC-only available, just show trimmed All Locations
-                df = df.head(10)
+                return df.head(10)
 
         elif "lebustiere" in filename:
             # DC-only sales
-            df = df.head(10)
+            return df.head(10)
 
     # -------------------------
     # TRANSACTION REPORTS
@@ -86,23 +88,21 @@ def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.
         df = df[keep]
 
         if "Line Item" in df.columns:
-            # Extract size
             df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
-
-            # Count sizes
             size_counts = (
                 df["Size"]
                 .value_counts()
                 .reset_index()
                 .rename(columns={"index": "Size", "Size": "Count"})
             )
-
-            df = size_counts.head(20)
+            return size_counts.head(20)
 
     else:
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
+        return df
 
     return df
+
 # -------------------------
 # Converts df -> reportlab Table
 # -------------------------
@@ -149,6 +149,10 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
     story.append(Paragraph(f"Combined Weekly Report (generated {generated_time})", styles['Title']))
     story.append(Spacer(1, 12))
 
+    # Load DC-only upfront if available
+    dc_file = find_latest_file("csvs/lebustiere_*sales-by-item*.csv")
+    dc_sales_df = pd.read_csv(dc_file, dtype=str) if dc_file else None
+
     for idx, file_path in enumerate(csv_files, start=1):
         basename = os.path.basename(file_path)
         print(f"[DEBUG] Processing file {idx}/{len(csv_files)}: {basename}")
@@ -156,7 +160,7 @@ def create_pdf_report(csv_files: List[str], column_map: Dict[str, Optional[List[
         story.append(Spacer(1, 6))
 
         try:
-            df = scrub_csv(file_path)
+            df = scrub_csv(file_path, dc_sales_df=dc_sales_df)
         except Exception as e:
             print(f"[ERROR] Failed reading {basename}: {e}")
             story.append(Paragraph(f"<i>Error reading {basename}: {e}</i>", styles['BodyText']))
@@ -262,4 +266,5 @@ if __name__ == "__main__":
             print(f"[ERROR] Email failed: {e}")
     else:
         print("[INFO] Email skipped - set GMAIL_USER & GMAIL_APP_PASSWORD env vars to enable.")
+
 
