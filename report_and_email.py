@@ -28,77 +28,78 @@ from email import encoders
 # -------------------------
 # Read & Scrub CSV
 # -------------------------
-def scrub_csv(file_path: str) -> pd.DataFrame:
+def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.DataFrame:
     filename = os.path.basename(file_path).lower()
     df = pd.read_csv(file_path, dtype=str)
 
-    if "sales" in filename:
+    # -------------------------
+    # SALES REPORTS
+    # -------------------------
+    if "sales-by-item" in filename:
+        # Drop common sales columns
+        df = df.drop(
+            columns=[
+                "Department", "Category", "Quantity Returned",
+                "Returns Amount", "Discounts", "Margin",
+                "Quantity on Hand", "Supplier", "Supplier Code",
+                "Product UUID"
+            ],
+            errors="ignore"
+        )
+
         if "all_locations" in filename:
-            # Bethesda sales scrub rules
-            df = df.drop(
-                columns=[
-                    "Department", "Category", "Quantity Returned",
-                    "Returns Amount", "Discounts", "Margin",
-                    "Quantity on Hand", "Supplier", "Supplier Code",
-                    "Product UUID"
-                ],
-                errors="ignore"
-            )
-            df = df.head(10)
-        else:
-            # DC sales scrub rules
-            df = df.drop(
-                columns=[
-                    "Department", "Category", "Quantity Returned",
-                    "Returns Amount", "Discounts", "Margin",
-                    "Quantity on Hand", "Supplier", "Supplier Code",
-                    "Product UUID"
-                ],
-                errors="ignore"
-            )
+            # All Locations → try to create Bethesda-only
+            if dc_sales_df is not None:
+                try:
+                    common_cols = list(set(df.columns).intersection(dc_sales_df.columns))
+                    bethesda_df = df[common_cols].copy()
+                    dc_only = dc_sales_df[common_cols].copy()
+
+                    # Convert to numeric where possible
+                    for col in bethesda_df.columns:
+                        bethesda_df[col] = pd.to_numeric(bethesda_df[col], errors="ignore")
+                        if col in dc_only:
+                            dc_only[col] = pd.to_numeric(dc_only[col], errors="ignore")
+
+                    # Subtract DC values from All Locations to approximate Bethesda
+                    for col in bethesda_df.select_dtypes(include="number").columns:
+                        if col in dc_only:
+                            bethesda_df[col] = bethesda_df[col] - dc_only[col]
+
+                    df = bethesda_df.head(10)
+                except Exception as e:
+                    print(f"[ERROR] Failed to generate Bethesda-only report: {e}")
+                    df = df.head(10)
+            else:
+                # If no DC-only available, just show trimmed All Locations
+                df = df.head(10)
+
+        elif "lebustiere" in filename:
+            # DC-only sales
             df = df.head(10)
 
+    # -------------------------
+    # TRANSACTION REPORTS
+    # -------------------------
     elif "transaction" in filename:
-        if "lebustiere2" in filename:
-            # Bethesda transaction scrub rules
-            keep = [c for c in ["Line Item"] if c in df.columns]
-            df = df[keep]
+        keep = [c for c in ["Line Item"] if c in df.columns]
+        df = df[keep]
 
-            if "Line Item" in df.columns:
-                # Extract size
-                df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
+        if "Line Item" in df.columns:
+            # Extract size
+            df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
 
-                # Count sizes
-                size_counts = (
-                    df["Size"]
-                    .value_counts()
-                    .reset_index()
-                    .rename(columns={"index": "Size", "Size": "Count"})
-                )
+            # Count sizes
+            size_counts = (
+                df["Size"]
+                .value_counts()
+                .reset_index()
+                .rename(columns={"index": "Size", "Size": "Count"})
+            )
 
-                # Keep top 20 sizes
-                df = size_counts.head(20)
-        else:
-            # DC transaction scrub rules
-            keep = [c for c in ["Line Item"] if c in df.columns]
-            df = df[keep]
+            df = size_counts.head(20)
 
-            if "Line Item" in df.columns:
-                # Extract size
-                df["Size"] = df["Line Item"].str.extract(r"-\s*([^\s]+)")
-
-                # Count sizes
-                size_counts = (
-                    df["Size"]
-                    .value_counts()
-                    .reset_index()
-                    .rename(columns={"index": "Size", "Size": "Count"})
-                )
-
-                # Keep top 20 sizes
-                df = size_counts.head(20)
-
-    else: 
+    else:
         print(f"[INFO] No specific scrub rules for {filename}, keeping all columns.")
 
     return df
