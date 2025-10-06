@@ -1,4 +1,8 @@
 flask
 pandas
 reportlab
+gunicorn
+pillow
+python-dateutil
+pytz
 
