@@ -1,1 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+}
+form {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+button {
+  background: #4f81bd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #3a68a3;
+}
+#message {
+  margin-top: 20px;
+  font-size: 1rem;
+}
 
