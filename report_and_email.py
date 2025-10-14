@@ -66,7 +66,21 @@ def scrub_csv(file_path: str, dc_sales_df: Optional[pd.DataFrame] = None) -> pd.
                     dc_only = dc_sales_df[common_cols].copy()
 
                     # Bethesda-only = all locations minus DC
-                    bethesda_only_df = pd.concat([all_df, dc_only]).drop_duplicates(keep=False)
+                    # Merge both dataframes on Item Description so we can compare quantities
+                    merged = all_df.merge(dc_only, on="Item Description", suffixes=("_all", "_dc"))
+
+                    # Find where Quantity Sold differs between the two reports
+                    quantity_diff = merged[merged["Quantity Sold_all"] != merged["Quantity Sold_dc"]].copy()
+
+                    # Calculate the difference (All Locations - DC Only)
+                    quantity_diff["Quantity Difference"] = (
+                        merged["Quantity Sold_all"] - merged["Quantity Sold_dc"]
+                    )
+
+                    # Keep relevant columns and maintain readability
+                    bethesda_only_df = quantity_diff[
+                        ["Item Description", "Quantity Sold_all", "Quantity Sold_dc", "Quantity Difference"]
+                    ]
 
                     print(f"[INFO] Generated Bethesda-only report: rows={len(bethesda_only_df)}")
                     return bethesda_only_df.head(10)
