@@ -54,8 +54,8 @@ jobs:
       - name: Test app startup
         run: python -m flask --version
 
-      #- name: Deploy to Render
-       # uses: johnbeynon/render-deploy-action@v1
-        #with:
-         # service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          #api-key: ${{ secrets.RENDER_API_KEY }}
+      - name: Deploy to Render
+        uses: render-examples/deploy-to-render@v1
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
