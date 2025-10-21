@@ -1,0 +1,152 @@
+Item Description,Department,Category,Quantity Sold,Sales Amount,Quantity Returned,Returns Amount,Costs,Discounts,Margin,Gross Profit,Net Sales,Quantity on Hand,Supplier,Supplier Code,Product UUID
+LBB SP Comete,Bra,Bra,38.0,5168.0,0.0,0.0,2071.0,0.0,59.93,3097.0,5168.0,N/A,,,35a335fc-3940-40eb-9700-70ebaaf5172e
+LBB CH Norah Chic,Bra,general,21.0,2562.0,0.0,0.0,716.12,0.0,72.05,1845.88,2562.0,N/A,,,ac1ebd3b-6224-48c7-acac-bf5e14b497ec
+Euc Lingerie Wash Jasmine 3.3oz,Lingerie Wash,Lingerie Wash,9.0,63.0,0.0,0.0,27.0,0.0,57.14,36.0,63.0,N/A,,,9d9d41fa-ab2f-4906-8e1c-cfa0ec914c9d
+Euc Lingerie Wash Unscented 3.3oz,Lingerie Wash,Lingerie Wash,8.0,56.0,0.0,0.0,24.0,0.0,57.14,32.0,56.0,N/A,,,4052c08d-f1c7-474a-8815-0366924106e0
+LBB EL Matilda Plum,Bra and Panty Set,SET,8.0,613.0,0.0,0.0,241.65,0.0,60.58,371.35,613.0,N/A,,,88c543d3-784d-4c5c-9a04-2f12d7490fd3
+LBB AUB Rosesse Fash,Bra and Panty Set,SET,8.0,1309.0,0.0,0.0,432.21,0.0,66.98,876.79,1309.0,N/A,,,9fc2f935-a741-4918-8307-387e940ba719
+LBB CH Norah Flex,Bra,Full Coverage,7.0,854.0,0.0,0.0,256.12,0.0,70.01,597.88,854.0,N/A,,,0f80c5ab-a5d2-49bb-950d-b8203954cfd5
+LBB SP Strapless,Bra,Strapless,7.0,714.0,0.0,0.0,276.5,0.0,61.27,437.5,714.0,N/A,,,9135cf0f-d8c1-4228-ba9f-ee7cad782c0a
+LBB CK Victory Bra,Bra,Balcony,7.0,539.0,0.0,0.0,211.8,0.0,60.71,327.2,539.0,N/A,,,dc9c3538-5f79-4e7b-874b-58e46d1df81e
+LBB AUB Crazy Love,Set,Set,7.0,1465.0,0.0,0.0,485.49,0.0,66.86,979.51,1465.0,N/A,,,64bc784d-bba5-4fb7-9a1b-57d2c061ff98
+Euc Lingerie Wash Grapefruit 3.3oz,Lingerie Wash,Lingerie Wash,7.0,49.0,0.0,0.0,21.0,0.0,57.14,28.0,49.0,N/A,,,d1ac3656-04b1-4ca5-b496-15a896730f76
+LBB CK Stardust,Bra and Panty Set,SET,6.0,441.0,0.0,0.0,174.0,0.0,60.54,267.0,441.0,N/A,,,64323d38-76d9-4392-a866-b6d5e8c32caa
+LBB EL Smoothie Em,Bra,Full Coverage,6.0,456.0,0.0,0.0,175.5,0.0,61.51,280.5,456.0,N/A,,,53fbe0cd-b435-4172-b5b3-e09d8a8fe45b
+Euc Lingerie Wash Lavender 3.3oz,Lingerie Wash,Lingerie Wash,6.0,42.0,0.0,0.0,18.0,0.0,57.14,24.0,42.0,N/A,,,5a76d71b-6695-4fe2-8744-bbfaffc0f818
+LBB CH Magnifique WF,Bra,Wireless,5.0,500.0,0.0,0.0,149.75,0.0,70.05,350.25,500.0,N/A,,,2a431d57-0e55-4d1e-970c-ba5613683cb2
+LBB EL Matilda ,Set,Bra and Panty,5.0,410.0,0.0,0.0,162.0,0.0,60.49,248.0,410.0,N/A,,,8560467a-e523-4d0b-b843-383c72eaab93
+LBB SP Subtile ,Bra,Moulded,5.0,455.0,0.0,0.0,180.0,0.0,60.44,275.0,455.0,N/A,,,34b2aea8-f209-4e4d-9bdd-e32d6950a65a
+LBB EL Smoothie,Bra,Moulded ,5.0,380.0,0.0,0.0,146.25,0.0,61.51,233.75,380.0,N/A,,,4eeb6ff7-1594-4b49-b21f-a45b333b1a8a
+Euc Lingerie Wash Eucalyptus 3.3oz,Lingerie Wash,Lingerie Wash,5.0,35.0,0.0,0.0,15.0,0.0,57.14,20.0,35.0,N/A,,,edb96197-c08e-43b6-b5ff-9c417607bcb7
+LBB EL Nerina ,Set,Bra and Panty,4.0,328.0,0.0,0.0,129.6,0.0,60.49,198.4,328.0,N/A,,,51d1cce1-2c20-4ba1-b889-2ddeccff0418
+LBB EL Nerina Fash,Bra and Panty Set,SET,4.0,328.0,0.0,0.0,129.6,0.0,60.49,198.4,328.0,N/A,,,f6ede82d-e423-4346-9f7a-5ffaabcd4c55
+LBB CH Norah,Bra,general,4.0,476.0,0.0,0.0,157.44,0.0,66.92,318.56,476.0,N/A,,,f990c395-414d-4841-b783-0ec672b23cd9
+LBB AUB Sound of,Set,3 PC,4.0,789.0,0.0,0.0,261.43,0.0,66.87,527.57,789.0,N/A,,,570e8ba0-7fed-4e49-a027-18308b338729
+LBB BDL Syra,Lingerie,Set,3.0,689.0,0.0,0.0,228.22,0.0,66.88,460.78,689.0,N/A,,,0a2427f0-1432-4794-b612-9338ec8ad91f
+LBB AUB Sheer Emo BLK,Set,Bra and Panty,3.0,411.0,0.0,0.0,136.01,0.0,66.91,274.99,411.0,N/A,,,96e8fa26-08a9-4979-b55d-0887143d906a
+LBB FR Sonic Sports Bra,Sports Bra,general,3.0,248.0,0.0,0.0,99.9,0.0,59.72,148.1,248.0,N/A,,,d0fc7fa4-eea0-4724-81e1-e8321c6dcd66
+LBB EL Kintai Fash,Set,Bra and Panty,3.0,195.0,0.0,0.0,76.05,0.0,61.0,118.95,195.0,N/A,,,56c5db73-c479-4eaa-a186-4361f4147cf1
+LBB SP Andora Bra,Bra,moulded,3.0,378.0,0.0,0.0,150.0,0.0,60.32,228.0,378.0,N/A,,,f491dbe3-525e-4b57-a580-a95e872779b9
+LBB FE EVA,Lingerie,Set,3.0,726.0,0.0,0.0,241.0,0.0,66.8,485.0,726.0,N/A,,,13a146e7-5072-49fa-ae4d-49c121dc87a4
+LBB CH Norah Violet,Bra,Bra,3.0,357.0,0.0,0.0,118.08,0.0,66.92,238.92,357.0,N/A,,,812d7905-dd82-465d-b5b0-560b9ef6e3ed
+Misc Taxable,general,general,3.0,700.0,0.0,0.0,0.0,0.0,100.0,700.0,700.0,0.0,not tracked,,75CA3465-9E54-469B-9F01-E4FE38C1834D
+LBB CH Comfort Chic,Bra,Balcony,3.0,345.0,0.0,0.0,120.96,0.0,64.94,224.04,345.0,N/A,,,34dc8317-53ae-4c05-96f5-f317550341f5
+LBB CH Softstretch Panty,Underwear,Soft Stretch,3.0,72.0,0.0,0.0,16.0,0.0,77.78,56.0,72.0,N/A,,,f6c94ae5-7f65-4322-930f-cacb07dba388
+LBB LBC Beatrice,Bra,Bra,3.0,240.0,0.0,0.0,96.0,0.0,60.0,144.0,240.0,N/A,,,7e08235b-d3c9-4185-a24b-f603ac262b3b
+LBB EL Zarla Saph,Bra,set,3.0,209.0,0.0,0.0,79.65,0.0,61.89,129.35,209.0,N/A,,,3413473c-f806-476b-8afe-db83d8734f05
+Bra Fitting Service,general,general,3.0,75.0,0.0,0.0,0.0,0.0,100.0,75.0,75.0,0.0,not tracked,,1985CCA8-1F41-42E9-8DB9-87966A4FDF8E
+LBB CK Happy Boobs,Bra,general,2.0,152.0,0.0,0.0,42.64,0.0,71.95,109.36,152.0,N/A,,,4b6c588b-dc6c-4cc5-a19b-834d43516d79
+LBB AJ Joli,Bra and Panty Set,general,2.0,208.0,0.0,0.0,52.0,0.0,75.0,156.0,208.0,N/A,,,5aa7b469-cba0-48ef-93a5-190f79ea3a38
+LBB CK Flora  Bra,Bra,Balcony,2.0,170.0,0.0,0.0,59.1,0.0,65.24,110.9,170.0,N/A,,,a527d5be-78e9-4b8c-baf6-e96692714fda
+LBB LCO Maison Minuit ,Body,Body,2.0,134.0,0.0,0.0,44.0,0.0,67.16,90.0,134.0,N/A,,,d1910d37-2755-429d-bf2e-55d14401caaa
+LBB EL Nerina PL,general,general,2.0,164.0,0.0,0.0,64.8,0.0,60.49,99.2,164.0,N/A,,,00a466c8-90a7-46f5-99f6-1272158fefdb
+LBB CK SC Suspense,Bra and Panty Set,SET,2.0,152.0,0.0,0.0,55.0,0.0,63.82,97.0,152.0,N/A,,,d3e230ca-176e-4216-a25a-f17ba06daa03
+LBB EL Teagan CAFE,Bra and Panty Set,SET,2.0,178.0,0.0,0.0,70.2,0.0,60.56,107.8,178.0,N/A,,,c3b09624-38ea-420a-925d-b024c0a0e564
+LBB EL Cate Allure,Bra,Underwire,2.0,156.0,0.0,0.0,61.2,0.0,60.77,94.8,156.0,N/A,,,9d4ba93a-567c-48b3-80cd-f6d029d88371
+LBB MC Deniers Back Seam,Hosiery,Thigh High,2.0,120.0,0.0,0.0,43.35,0.0,63.88,76.65,120.0,N/A,,,8e0d86f0-db45-4c03-b7e1-0e32b7bb7682
+LBB FE Cecilia,Bra and Panty Set,SET,2.0,422.0,0.0,0.0,140.0,0.0,66.82,282.0,422.0,N/A,,,3f9ee86d-13ac-48cb-bd60-cb241c471760
+LBB AUB Bahia ,Bra,Set,2.0,219.0,0.0,0.0,72.18,15.8,64.48,131.02,203.2,N/A,,,5b64ac48-4583-43ec-9669-430d0962ee4e
+LBB MC Voile Couture Lurex ,general,general,2.0,116.0,0.0,0.0,47.2,0.0,59.31,68.8,116.0,N/A,,,ea42763b-5020-4730-affa-91ea2bd201da
+LBB AUB Rules,Lingerie,Set,2.0,330.0,0.0,0.0,109.15,0.0,66.92,220.85,330.0,N/A,,,d7ae2fcb-8b4b-4277-b6c2-b79dc716780a
+LBB SP Andora Plunge ,Bra,Plunge,2.0,262.0,0.0,0.0,104.0,0.0,60.31,158.0,262.0,N/A,,,9dc7313b-95d3-4239-aed6-7d1c3999d22b
+LBB CK SC Entwined,Bra,Set,2.0,163.0,0.0,0.0,55.45,0.0,65.98,107.55,163.0,N/A,,,a2e18dff-02b2-49f2-909e-e6011bfdbbd5
+LBB AUB Into the Groove,Lingerie,Set,2.0,351.0,0.0,0.0,116.2,0.0,66.89,234.8,351.0,N/A,,,964bb072-c8dc-4596-9662-d98a3003e198
+LBB SP CARESSE Plunge,Bra,Plunge,2.0,262.0,0.0,0.0,104.0,0.0,60.31,158.0,262.0,N/A,,,fd7acf01-fb8e-4719-8998-9274af452707
+LBB AUB Danse  Opal,Lingerie,Set,2.0,464.0,0.0,0.0,136.44,0.0,70.59,327.56,464.0,N/A,,,bbbf7197-9d35-4a4c-abdd-5113e47f3f0a
+LBB DVT Rose Glambition,Lingerie,Set,2.0,203.0,0.0,0.0,66.91,0.0,67.04,136.09,203.0,N/A,,,fe6b35ba-8646-453e-a4e7-a999b52d1e7d
+LBB EL Teagan AZA,Set,Bra and Panty,2.0,178.0,0.0,0.0,70.2,0.0,60.56,107.8,178.0,N/A,,,795e7429-0f56-49b7-8f32-a8b06caaa2f0
+LBB ML Gaby,Bra,FullCup,2.0,270.0,0.0,0.0,106.8,0.0,60.44,163.2,270.0,N/A,,,c2661168-7523-4227-975a-b037f45f13ab
+LBB Va Bien Bustier Nude,Bustier,Bustier,2.0,210.0,0.0,0.0,83.66,0.0,60.16,126.34,210.0,N/A,,,b5586723-720b-4613-be89-b88d278b74e4
+LBB EP Melody ,Bra ,general,2.0,508.0,0.0,0.0,198.1,0.0,61.0,309.9,508.0,N/A,,,6dd18118-5d0b-40e4-b7d2-396bf1bb99df
+LBB LEO Shaper,Body Shapers,general,2.0,112.0,0.0,0.0,35.0,0.0,68.75,77.0,112.0,N/A,,,50e23a55-67f7-4c72-93af-17c92914c79d
+LBB EL Tiernie,Bra,Plunge,2.0,156.0,0.0,0.0,61.2,0.0,60.77,94.8,156.0,N/A,,,26f0c73f-1823-479e-8913-00df249236e9
+Euc Lingerie Wash Unscented 16.9oz,Lingerie Wash,Lingerie Wash,2.0,42.0,0.0,0.0,16.0,0.0,61.9,26.0,42.0,N/A,,,30df6a82-581e-4dc3-9bba-93b97908d484
+LBB EL Babydoll ,BabyDoll,general,2.0,154.0,0.0,0.0,51.3,0.0,66.69,102.7,154.0,N/A,,,0c6021cf-92f1-4649-abfb-aea26b0aef6b
+LBB AUB Dans Plunge Blk,Bra,Plunge,2.0,464.0,0.0,0.0,131.16,0.0,71.73,332.84,464.0,N/A,,,133b301e-278b-41af-bb28-a64bc49825cb
+LBB AUB Sheer Emo ,Set,Bra and Panty,2.0,253.0,0.0,0.0,83.63,0.0,66.94,169.37,253.0,N/A,,,42d37328-fd63-4885-a1f6-38994c20d1f4
+LBB MC Cut And Curled Veil,general,general,2.0,60.0,0.0,0.0,21.2,0.0,64.67,38.8,60.0,N/A,,,c1ed2a4b-318a-4066-830a-b1ad128abdd2
+LBB EP ALLURE ,Bra and Panty Set,general,2.0,407.0,0.0,0.0,162.6,0.0,60.05,244.4,407.0,N/A,,,4cbc001e-9501-4462-beca-3ccd64bd83ac
+LBB TR Tallulah Bra 32D,Bra,Half Padded,1.0,90.0,0.0,0.0,34.25,27.0,45.63,28.75,63.0,0.0,Tutti Rouge,B2242,48A1ECB0-F1E2-45B2-9A66-956A3D64553E
+LBB AUB Lovessence,Bra and Panty Set,general,1.0,92.0,0.0,0.0,28.61,18.4,61.13,44.99,73.6,N/A,,,346e24d6-4eb8-43c1-8c02-c4b98b383005
+LBB AUB Danse Mulb,Daywear,general,1.0,206.0,0.0,0.0,68.22,0.0,66.88,137.78,206.0,N/A,,,260bc9fc-5368-408f-8bbb-f275d8551fea
+LBB CH Maris,Bra,Full Cup,1.0,120.0,0.0,0.0,47.04,0.0,60.8,72.96,120.0,N/A,,,ccea5ccb-5945-483d-a4b4-34a520fb36de
+LBB ESC Kaskada,Bra and Panty Set,general,1.0,152.0,0.0,0.0,38.0,0.0,75.0,114.0,152.0,N/A,,,65ed68d9-90a2-4482-8d7b-6aa911268194
+LBB ML Hypnotic Black,Bra and Panty Set,general,1.0,63.0,0.0,0.0,25.2,0.0,60.0,37.8,63.0,N/A,,,dae89f10-5e86-49aa-8bbb-7806f87aa193
+LBB OH Eyelash robe ,Robe,Robe,1.0,80.0,0.0,0.0,17.0,0.0,78.75,63.0,80.0,N/A,,,d948a523-2eff-4f5b-b61f-41a8b390a17c
+LBB SC Classic Silk,Babydoll,general,1.0,555.0,0.0,0.0,185.0,0.0,66.67,370.0,555.0,N/A,,,168790b7-3ec2-44b0-949a-21a628164611
+LBB MC Sage Decision ,general,general,1.0,198.0,0.0,0.0,66.0,0.0,66.67,132.0,198.0,N/A,,,6ac7efc5-50e7-4212-a5b0-d27bc0b1f897
+LBB EP Melody Ultv.,Bra,general,1.0,254.0,0.0,0.0,101.0,0.0,60.24,153.0,254.0,N/A,,,88686b95-e872-46f2-9f66-0fbdff1be73f
+LBB CK Heygirl strapless,Bra,general,1.0,83.0,0.0,0.0,32.75,0.0,60.54,50.25,83.0,N/A,,,55f6b463-4b66-456d-aa82-b13f5b727242
+LBB EL Zarla,Bra,Underwire,1.0,85.0,0.0,0.0,32.4,0.0,61.88,52.6,85.0,N/A,,,f4b04c95-3e05-4b8b-b671-ae175238d62c
+LBB CK Luxe Cocoa,Bra,general,1.0,88.0,0.0,0.0,35.0,0.0,60.23,53.0,88.0,N/A,,,a7787720-dd3a-4344-8fb4-4d17926d058a
+LBB ML Gaby Blanc ,Bra,Balconette,1.0,134.0,0.0,0.0,53.5,0.0,60.07,80.5,134.0,N/A,,,29dd0fb6-9ac9-4bc6-8189-ec285fee3364
+LBB SC Opulence,Body,general,1.0,114.0,0.0,0.0,41.85,0.0,63.29,72.15,114.0,N/A,,,8ac53557-aefa-4089-bc09-77dd4a6baa27
+LBB SBC Florence,Kimono,Kimono,1.0,475.0,1.0,-475.0,0.0,0.0,0.0,0.0,0.0,N/A,,,1e8dd871-be68-457f-9fe7-cecb62271011
+LBB LBC Lenna Bra,Bra,Push up,1.0,75.0,0.0,0.0,30.0,0.0,60.0,45.0,75.0,N/A,,,7faf9752-d330-4666-bf79-a33ad38a4650
+LBB Elila Lace Longline,Longline,Strapless,1.0,85.0,0.0,0.0,33.0,0.0,61.18,52.0,85.0,N/A,,,f20db37c-b93b-4d58-bb0b-4fc172f2fa30
+LBB AUB After Hours ,Set,Set,1.0,233.0,0.0,0.0,77.02,0.0,66.94,155.98,233.0,N/A,,,5d69f0aa-17be-452d-b200-0aacf8a0a316
+LBB CK Boost in Bloom,Bra,Push up,1.0,79.0,0.0,0.0,31.35,0.0,60.32,47.65,79.0,N/A,,,d0908492-8b73-4da6-b62e-0fa6b55872e8
+LBB AUB Illusion Fauve ,Bra and Panty Set,general,1.0,118.0,0.0,0.0,39.17,0.0,66.81,78.83,118.0,N/A,,,c6b673fc-9cae-4a18-9d72-27fd48cb0e1a
+Gift card,general,general,1.0,250.0,0.0,0.0,0.0,0.0,100.0,250.0,250.0,0.0,not tracked,,52859EF8-2EA9-4F3A-A892-C4A677FB2FE3
+Miscellaneous,general,general,1.0,200.0,0.0,0.0,0.0,0.0,100.0,200.0,200.0,0.0,not tracked,,954CF87B-4914-46B4-8AA9-C4065DFB9431
+LBB CK Top Spot,SET,Bra and Panty Set,1.0,78.0,0.0,0.0,30.0,0.0,61.54,48.0,78.0,N/A,,,117a3cb3-1cd0-4e3a-9921-559d9d92ed00
+LBB BR Absinthe ,Bra and Panty Set,SET,1.0,30.0,0.0,0.0,8.0,0.0,73.33,22.0,30.0,N/A,,,80f66185-3825-4e6d-9bbe-09d5f79571b0
+LBB  CK Lifestyle Hearts,Bra and Panty Set,general,1.0,36.0,0.0,0.0,14.55,0.0,59.58,21.45,36.0,N/A,,,15b5da30-76a5-4e59-97d3-e4144a8b0c99
+LBB AJ Sharon,Set,Set,1.0,47.0,0.0,0.0,16.8,0.0,64.26,30.2,47.0,N/A,,,246dd6e3-d428-4c44-90d7-4c398d35e8ac
+LBB CK Wonderfully ,Bra,FullCup,1.0,42.0,0.0,0.0,16.8,0.0,60.0,25.2,42.0,N/A,,,9c8c4526-a415-4c79-af28-b4271b70208b
+LBB Lavish Corset,Corset,Corset ,1.0,110.0,0.0,0.0,40.0,0.0,63.64,70.0,110.0,N/A,,,e820beef-88ed-464a-9ca5-dba83a6c9460
+LBB AUB Vibe Fash,Set,3 PC,1.0,206.0,0.0,0.0,68.22,0.0,66.88,137.78,206.0,N/A,,,bd06f1f2-93ad-4321-b219-2e46b3b1a985
+LBB ID Emb Tulle ,general,general,1.0,213.0,0.0,0.0,79.0,63.9,47.02,70.1,149.1,N/A,,,64f3a88d-c39d-477b-a04d-48ec9d149c04
+LBB SAM Plunge Bodysuit,Bodysuit,Bodysuit,1.0,181.0,0.0,0.0,60.0,0.0,66.85,121.0,181.0,N/A,,,4cfeaaed-bba2-4e8a-a3c7-f7df6dfc1fed
+LBB MC 20 deniers Nude,Hosiery,Thigh High,1.0,22.0,0.0,0.0,8.48,0.0,61.45,13.52,22.0,N/A,,,1166ca0c-de89-48e8-86a3-b94febcb896e
+LBB CK SC Eos,Bra and Panty Set,SET,1.0,89.0,0.0,0.0,32.25,0.0,63.76,56.75,89.0,N/A,,,d3a4d086-a935-4daa-b764-91ff3a15c00f
+LBB UC All Nighter,Body,general,1.0,160.0,0.0,0.0,56.0,0.0,65.0,104.0,160.0,N/A,,,96da9c13-63bd-456f-9113-76b8820d31ba
+LBB CH Norah Blush,Bra,Comfort Bra,1.0,119.0,0.0,0.0,39.36,0.0,66.92,79.64,119.0,N/A,,,5f30da1d-7e96-4c91-a7fa-cf00504d3cf5
+LBB SP Comete White,Bra,FullCup,1.0,136.0,0.0,0.0,54.5,0.0,59.93,81.5,136.0,N/A,,,b0808c59-28e0-4fab-9bf4-275e96cce8dc
+LBB CK Zen Bralette,Bralette,Bralette,1.0,62.0,0.0,0.0,24.55,0.0,60.4,37.45,62.0,N/A,,,16c74de7-990b-4233-9aa2-7aaf5424d847
+LBB CK Boost Me,Lingerie,Set,1.0,84.0,0.0,0.0,30.0,0.0,64.29,54.0,84.0,N/A,,,a494a728-93d8-4b2a-aee8-9fbacbe2bd32
+LBB CK luxe latte,Bra,Strapless,1.0,89.0,0.0,0.0,35.0,0.0,60.67,54.0,89.0,N/A,,,94dc00db-d893-40de-9408-c8c651ae9036
+LBB AUB Vibes Pearl,Set,3 PC,1.0,206.0,0.0,0.0,68.22,0.0,66.88,137.78,206.0,N/A,,,a004acd3-fde2-4d62-a0a2-71f29f8acd14
+LBB CAD Charleston,Lingerie,Bodysuit,1.0,419.0,0.0,0.0,161.53,41.9,57.17,215.57,377.1,N/A,,,b45abc09-6754-45d1-bbf4-0b83a12db1e2
+LBB CH Origins,Set,Bra and Panty,1.0,122.0,0.0,0.0,40.32,0.0,66.95,81.68,122.0,N/A,,,fe64ee6a-d58d-45ff-9e87-e3418cbb2006
+LBB CK Smoothie Spacer,Bra,moulded,1.0,87.0,0.0,0.0,33.65,0.0,61.32,53.35,87.0,N/A,,,ef13237f-0409-4a0b-be1c-0ca2ec8acd83
+LBB CK Amaze Balcony ,Bra,general,1.0,77.0,0.0,0.0,30.9,0.0,59.87,46.1,77.0,N/A,,,6e55a1ea-c5b9-4f09-b3da-38ff0e97bbd5
+LBB ML Attitude,general,general,1.0,149.0,0.0,0.0,59.6,0.0,60.0,89.4,149.0,N/A,,,32a5a084-d28d-4e17-b7a0-2f0567d39a4c
+LBB CK Unleash Brief Blk S,Underwear,Brief,1.0,50.0,0.0,0.0,22.3,0.0,55.4,27.7,50.0,1.0,Curvy Kate,ST2605,8B94D8FC-4339-4229-887A-6EF5C5C65303
+LBB CH Rive Gauche ,Bra,general,1.0,115.0,0.0,0.0,37.44,0.0,67.44,77.56,115.0,N/A,,,1ad8c855-74df-4404-a5fe-53c727b5a701
+LBB ML Sin Fidgi,Lingerie,Bra and Panty Set,1.0,149.0,0.0,0.0,59.6,0.0,60.0,89.4,149.0,N/A,,,c827cdaf-76e4-40c3-bbde-9ac4f2cb521a
+Euc Lingerie Wash Grapefruit 16.9oz,Lingerie Wash,Lingerie Wash,1.0,21.0,0.0,0.0,8.0,0.0,61.9,13.0,21.0,N/A,,,ae4745c7-96ab-4741-ab2c-21ae543a4f69
+LBB EP Leia,Bra,general,1.0,239.0,0.0,0.0,95.0,0.0,60.25,144.0,239.0,N/A,,,1b9637a0-b036-4794-bfd8-04cfb6ffd482
+LBB ESC Diana,Lingerie,Set,1.0,81.0,0.0,0.0,27.0,0.0,66.67,54.0,81.0,N/A,,,ec690b22-6af3-4040-9926-137ff0aaee31
+LBB ESC Nikita O-Bra,Bra,Open Bra,1.0,260.0,0.0,0.0,65.0,0.0,75.0,195.0,260.0,N/A,,,309e11cd-dd33-4407-966a-ef404011c5f5
+LBB AJ Exalted,Robe & Nighty,general,1.0,257.0,0.0,0.0,64.0,0.0,75.1,193.0,257.0,N/A,,,9cd823ab-2a39-4d89-a453-b52c637915d1
+LBB AUB Flawless Love,Set,Bra and Panty,1.0,211.0,0.0,0.0,69.98,0.0,66.83,141.02,211.0,N/A,,,eb487f8c-0b01-44fd-8b97-1871004b84b1
+LBB CH Jolie,Bra,Bra,1.0,117.0,0.0,0.0,38.54,0.0,67.06,78.46,117.0,N/A,,,efb42009-5aab-4941-9a09-98532869278d
+LBB MC 20 deniers BLK,Hosiery,Thigh High,1.0,39.0,0.0,0.0,12.0,0.0,69.23,27.0,39.0,N/A,,,433117c0-0c86-459d-8cb8-d23ea84384a6
+LBB EL MORGAN ,Bra and Panty Set,general,1.0,78.0,0.0,0.0,31.05,0.0,60.19,46.95,78.0,N/A,,,d51c203c-5df8-46f2-a8d4-f2b682875f26
+LBB PP Eleanor ,Robe,Robe,1.0,98.0,0.0,0.0,32.73,0.0,66.6,65.27,98.0,N/A,,,d7a22c7a-d760-40c7-b47a-fbaa6f1166d1
+LBB SC Unchained Deep,Bra and Panty Set,general,1.0,98.0,0.0,0.0,27.37,0.0,72.07,70.63,98.0,N/A,,,58ff6184-36c9-4423-93c8-c5cf9a026d3c
+LBB CH Norah Gardenia,Bra,Balconet,1.0,119.0,0.0,0.0,39.36,0.0,66.92,79.64,119.0,N/A,,,6bc2f491-aa35-4bdb-9525-54a3cbd7ee7a
+LBB AD Jawbreaker Tanga,Underwear,Tanga,1.0,55.0,0.0,0.0,22.0,11.0,50.0,22.0,44.0,N/A,,,825cc62c-e314-46f4-bad8-adb3c0df5161
+Euc Lingerie Wash Jasmine 16.9oz,Lingerie Wash,Lingerie Wash,1.0,21.0,0.0,0.0,8.0,0.0,61.9,13.0,21.0,N/A,,,5bce7b12-979d-4ed1-ac80-4d865c89efe2
+LBB CK Elementary,Bra and Panty Set,general,1.0,40.0,0.0,0.0,15.9,0.0,60.25,24.1,40.0,N/A,,,69e15a79-1661-4401-9692-84a6564e6b53
+LBB Ep Cassiopee ,Bra ,general,1.0,276.0,0.0,0.0,102.3,0.0,62.93,173.7,276.0,N/A,,,9042ee43-ab93-4b3f-9cba-f52ac4875b31
+LBB LBC Marissa,Bra,general,1.0,80.0,0.0,0.0,32.0,0.0,60.0,48.0,80.0,N/A,,,3d01ddcb-9474-4ae7-9e1d-1a20345353ad
+LBB CK Lace Daze Fashion,Lingerie,Set,1.0,80.0,0.0,0.0,31.35,0.0,60.81,48.65,80.0,N/A,,,2e9f2580-d6c6-4810-a2c5-857f384b7a46
+LBB SAM Illusion Bodysuit,Bodysuit,Bodysuit,1.0,204.0,0.0,0.0,65.0,20.4,64.6,118.6,183.6,N/A,,,5398d13d-18b9-424d-9f20-a0d5d7b6ee53
+LBB MC Retro Volie Nylon Blk ,Hosiery,Thigh High,1.0,55.0,0.0,0.0,20.0,0.0,63.64,35.0,55.0,N/A,,,e5366600-9aec-43e1-9ee7-848442eec714
+LBB CK Sapphire Seas,Swimsuit,general,1.0,120.0,0.0,0.0,47.75,0.0,60.21,72.25,120.0,N/A,,,95f176ca-116a-4bcd-be07-bedc4384195a
+LBB MC Glossy Tights,Hoisery,Panty Hose,1.0,45.0,0.0,0.0,16.13,0.0,64.16,28.87,45.0,N/A,,,6fa6fe0c-9a3e-41c3-9527-88285aaa66dd
+LBB EL Lucie ,Lingerie,Set,1.0,82.0,0.0,0.0,32.4,0.0,60.49,49.6,82.0,N/A,,,3cc17c17-2aa5-4045-b0b1-7fcf1e0bbb45
+LBB MH Finch Bra Pisatch 34C,Bra,Padded,1.0,128.0,0.0,0.0,42.0,38.4,53.13,47.6,89.6,0.0,Mimi Holiday,SS15251,5C695D1C-F70B-4CBA-8014-57FC17D897AC
+LBB CAD Mini Corset,Corset,Over Bust,1.0,585.0,0.0,0.0,195.0,0.0,66.67,390.0,585.0,N/A,,,2d86300f-b5af-456c-a2e9-1cb4a707a682
+Euc Lingerie Wash Lavender 16.9oz,Lingerie Wash,Lingerie Wash,1.0,21.0,0.0,0.0,8.0,0.0,61.9,13.0,21.0,N/A,,,60231f37-3057-4e39-bd36-70785ec2b96c
+LBB CK Wonderfull Vibe,Bra,general,1.0,80.0,0.0,0.0,31.8,0.0,60.25,48.2,80.0,N/A,,,9814f46f-97c1-4199-a385-091f8f7dc944
+LBB EL Energise Sports Bra,Sports Bra,general,1.0,75.0,0.0,0.0,30.15,0.0,59.8,44.85,75.0,N/A,,,d70c41ad-66ee-498c-83f8-f9e9f99d2af8
+LBB CH Magnifique,Bra,general,1.0,90.0,0.0,0.0,29.95,0.0,66.72,60.05,90.0,N/A,,,e0a77170-c5a0-4eb7-a7eb-71121b26ef99
+LBB SC Built Up Chemise,Chemise,Chemise,1.0,166.0,0.0,0.0,55.0,0.0,66.87,111.0,166.0,N/A,,,3831d286-3304-45f0-9480-0cfae7c8b980
+LBB ML Adage,general,general,1.0,64.0,0.0,0.0,25.2,0.0,60.62,38.8,64.0,N/A,,,e8742232-b993-4688-8473-556ec339def8
+LBB SAP Gaudy Body Blk,Bodysuit,Body,1.0,150.0,0.0,0.0,25.2,0.0,83.2,124.8,150.0,N/A,,,e9efb425-2fe6-4ba5-80f0-f31a79d5ce79
+LBB BR Mistela,Bra and Panty Set,SET,1.0,30.0,0.0,0.0,8.0,0.0,73.33,22.0,30.0,N/A,,,f5d8e656-acdb-48c3-acb5-1156a8462a68
+LBB AD Glam Underwire Bra 36D,Bra,Underwire ,1.0,85.0,0.0,0.0,32.0,0.0,62.35,53.0,85.0,0.0,Absolutely Lingerie,ADFGL02,85CE27D0-BA94-4D92-B5CE-384A9A15E10D
+LBB CK Frill Me,Lingerie,Set,1.0,105.0,0.0,0.0,41.85,0.0,60.14,63.15,105.0,N/A,,,e9f6750b-f200-4267-bf73-42b49f02a156
