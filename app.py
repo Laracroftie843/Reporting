@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template_string
 import os
+import subprocess
 from report_and_email import create_pdf_report
 import glob
 
@@ -11,7 +12,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 @app.route("/")
 def index():
-    # Serve frontend (if you prefer HTML file, see below)
+    # Serve frontend
     return send_from_directory("frontend", "index.html")
 
 @app.route("/upload", methods=["POST"])
@@ -32,12 +33,44 @@ def upload_files():
     if not saved_files:
         return jsonify({"error": "No valid files uploaded"}), 400
 
-    # Generate combined report
+    # Commit and push CSV files to GitHub
+    try:
+        subprocess.run(["git", "config", "--global", "user.name", "render-bot"], check=True)
+        subprocess.run(["git", "config", "--global", "user.email", "render@render.com"], check=True)
+
+        # Add the saved CSVs
+        subprocess.run(["git", "add", UPLOAD_FOLDER], check=True)
+
+        # Commit changes if there are any
+        commit_result = subprocess.run(
+            ["git", "diff", "--cached", "--quiet"], check=False
+        )
+        if commit_result.returncode != 0:  # means there ARE staged changes
+            subprocess.run(
+                ["git", "commit", "-m", "Add new CSV files via web upload"],
+                check=True
+            )
+            # Use token authentication for push (safer than embedding token directly in URL logs)
+            repo_url = "https://github.com/Laracroftie843/Reporting.git"
+            token = os.getenv("GITHUB_TOKEN")
+            if not token:
+                return jsonify({"error": "Missing GITHUB_TOKEN in environment"}), 500
+
+            subprocess.run(
+                ["git", "push", f"https://{token}:x-oauth-basic@github.com/Laracroftie843/Reporting.git", "main"],
+                check=True
+            )
+        else:
+            print("No new changes to commit.")
+    except subprocess.CalledProcessError as e:
+        return jsonify({"error": f"Git push failed: {e}"}), 500
+
+    # Generate combined PDF report (keeps existing functionality)
     pdf_output = os.path.join(OUTPUT_FOLDER, "weekly_report.pdf")
     create_pdf_report(saved_files, column_map={f: None for f in saved_files}, output_file=pdf_output)
 
     return jsonify({
-        "message": "Report generated successfully!",
+        "message": "Report generated and committed successfully!",
         "pdf_download": "/download/weekly_report.pdf"
     })
 
@@ -47,4 +80,3 @@ def download_file(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
