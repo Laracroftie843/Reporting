@@ -30,7 +30,7 @@
 
       const formData = new FormData();
       for (const file of filesInput.files) {
-        formData.append("files", file);
+        formData.append("files[]", file); // ✅ matches Flask field name
       }
 
       messageDiv.textContent = "Uploading...";
@@ -42,13 +42,25 @@
           body: formData,
         });
 
-        if (!response.ok) {
-          throw new Error("Server responded with an error");
-        }
+        const result = await response.json(); // ✅ Flask returns JSON now
 
-        const result = await response.text();
-        messageDiv.textContent = result || "Upload successful!";
-        messageDiv.style.color = "green";
+        if (response.ok) {
+          messageDiv.textContent = result.message || "Upload successful!";
+          messageDiv.style.color = "green";
+
+          // Checks if the server returned a PDF link, offer a download
+          if (result.pdf_download) {
+            const link = document.createElement("a");
+            link.href = result.pdf_download;
+            link.textContent = "Download Generated Report";
+            link.style.display = "block";
+            link.style.marginTop = "10px";
+            document.body.appendChild(link);
+          }
+        } else {
+          messageDiv.textContent = result.error || "Server responded with an error.";
+          messageDiv.style.color = "red";
+        }
       } catch (error) {
         console.error(error);
         messageDiv.textContent = "Error uploading files. Please try again.";
@@ -57,5 +69,7 @@
     });
   </script>
 </body>
+</html>
+
 </html>
 
