@@ -8,14 +8,54 @@
 <body>
   <h1>Upload Sales and Transaction Reports</h1>
 
-  <form id="uploadForm">
+  <form id="uploadForm" enctype="multipart/form-data">
     <input type="file" id="files" name="files[]" multiple accept=".csv" />
     <button type="submit">Upload & Generate Report</button>
   </form>
 
   <div id="message"></div>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const filesInput = document.getElementById("files");
+      const messageDiv = document.getElementById("message");
+
+      if (filesInput.files.length === 0) {
+        messageDiv.textContent = "Please select at least one CSV file.";
+        messageDiv.style.color = "red";
+        return;
+      }
+
+      const formData = new FormData();
+      for (const file of filesInput.files) {
+        formData.append("files", file);
+      }
+
+      messageDiv.textContent = "Uploading...";
+      messageDiv.style.color = "black";
+
+      try {
+        const response = await fetch("/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Server responded with an error");
+        }
+
+        const result = await response.text();
+        messageDiv.textContent = result || "Upload successful!";
+        messageDiv.style.color = "green";
+      } catch (error) {
+        console.error(error);
+        messageDiv.textContent = "Error uploading files. Please try again.";
+        messageDiv.style.color = "red";
+      }
+    });
+  </script>
 </body>
 </html>
 
