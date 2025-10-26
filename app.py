@@ -57,7 +57,7 @@ def upload_files():
                 return jsonify({"error": "Missing GITHUB_TOKEN in environment"}), 500
 
             subprocess.run(
-                ["git", "push", f"https://{token}:x-oauth-basic@github.com/Laracroftie843/Reporting.git", "main"],
+                ["git", "push", f"https://{token}:x-oauth-basic@github.com/Laracroftie843/Reporting.git", "report-project"],
                 check=True
             )
         else:
