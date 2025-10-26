@@ -40,7 +40,7 @@ def upload_files():
         subprocess.run(["git", "config", "--global", "user.email", "render@render.com"], check=True)
         
         # Add the saved CSVs
-        subprocess.run(["git", "add", UPLOAD_FOLDER], check=True)
+        subprocess.run(["git", "add", "Reporting/csvs"], check=True)
 
         # Commit changes if there are any
         commit_result = subprocess.run(
