@@ -3,7 +3,7 @@ name: Generate and Deploy Report App
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ report-project ]
 
 jobs:
   build:
