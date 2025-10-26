@@ -35,9 +35,10 @@ def upload_files():
 
     # Commit and push CSV files to GitHub
     try:
+        print("Current working directory:", os.getcwd())
         subprocess.run(["git", "config", "--global", "user.name", "render-bot"], check=True)
         subprocess.run(["git", "config", "--global", "user.email", "render@render.com"], check=True)
-
+        
         # Add the saved CSVs
         subprocess.run(["git", "add", UPLOAD_FOLDER], check=True)
 
